@@ -33,12 +33,12 @@
             <option value="sharpshooter">Sharpshooter</option>
             <option value="miscreant">Miscreant</option>
         </select>
-        Archetype
+        <span class="field__header">Archetype</span>
     </label>
 </div>
-<div class="center--top">
-    <div>
-        <h2 class="section">Skills</h2>
+<div class="section">
+    <div class="skills">
+        <h2>Skills</h2>
         <label>
             <span class="field__header">Fight</span>
             <input type="number" name="attr_fight" min="1" max="8" value="4" />
@@ -66,149 +66,275 @@
     </div>
     <div class="center">
         <div>
-            <h2 class="section">Stress</h2>
+            <h2>Stress</h2>
             <input name="attr_stress" type="range" min="0" max="@{survive}" value="0" class="slider" />    
         </div>
         <div>
-            <h2 class="section">Void Points</h2>
+            <h2>Void Points</h2>
             <input name="attr_void" type="number" value="0" />    
         </div>
     </div>
     <div>
-        <h2 class="section">Styles</h2>
+        <h2>Styles</h2>
         <label>
-            <span class="field__header">Boldly</span>
             <input type="number" name="attr_boldly" min="1" max="8" value="4" />
+            <span class="field__header">Boldly</span>
         </label>
         <label>
-            <span class="field__header">Carefully</span>
             <input type="number" name="attr_carefully" min="1" max="8" value="4" />
+            <span class="field__header">Carefully</span>
         </label>
         <label>
-            <span class="field__header">Cleverly</span>
             <input type="number" name="attr_cleverly" min="1" max="8" value="4" />
+            <span class="field__header">Cleverly</span>
         </label>
         <label>
-            <span class="field__header">Forcefully</span>
             <input type="number" name="attr_forcefully" min="1" max="8" value="4" />
+            <span class="field__header">Forcefully</span>
         </label>
         <label>
-            <span class="field__header">Quietly</span>
             <input type="number" name="attr_quietly" min="1" max="8" value="4" />
+            <span class="field__header">Quietly</span>
         </label>
         <label>
-            <span class="field__header">Swiftly</span>
             <input type="number" name="attr_swiftly" min="1" max="8" value="4" />
+            <span class="field__header">Swiftly</span>
         </label>
     </div>
 </div>
 
-<div class="center--bottom">
+<div class="section">
     <div>
-        <h2 class="section">Contacts</h2>
-        <fieldset class="repeating_contact"> 
-            <label class="header__field">
-                <span class="field__header">Name</span>
-                <input type="text" name="attr_name" placeholder="Name of the contact" />
-            </label>
-            <label class="header__field">
-                <span class="field__header">Level</span>
-                <select name="attr_focusname"> 
-                    <option value="great">Great</option>
-                    <option value="fair">Fair</option>
-                    <option value="neutral" selected>Neutral</option>
-                    <option value="poor">Poor</option>
-                    <option value="dire">Dire</option>
-                </select>    
-            </label>
+        <h2>Contacts</h2>
+        <fieldset class="repeating_contact">
+            <div class="rep--oneline">
+                <label class="header__field">
+                    <span class="field__header">Name</span>
+                    <input type="text" name="attr_name" placeholder="Name of the contact" />
+                </label>
+                <label class="header__field">
+                    <span class="field__header">Level</span>
+                    <select name="attr_level"> 
+                        <option value="great">Great</option>
+                        <option value="fair">Fair</option>
+                        <option value="neutral" selected>Neutral</option>
+                        <option value="poor">Poor</option>
+                        <option value="dire">Dire</option>
+                    </select>    
+                </label>    
+            </div>
         </fieldset>    
     </div>
     <div>
-        <h2 class="section">Talents</h2>
-        <label>
-            <button>Add a talent</button>
-        </label>    
-    </div>
-    <div>
-        <h2 class="section">Focuses</h2>
+        <h2>Focuses</h2>
         <fieldset class="repeating_focus"> 
-            <label class="header__field">
-                <select name="attr_focusname"> 
-                    <option value="Acrobatics">Acrobatics</option>
-                    <option value="Archery">Archery</option>
-                    <option value="Boats">Boats</option>
-                    <option value="Brawling">Brawling</option>
-                    <option value="Carriages">Carriages</option>
-                    <option value="Concentrate">Concentrate</option>
-                    <option value="Counsel">Counsel</option>
-                    <option value="Deceive">Deceive</option>
-                    <option value="Engineering">Engineering</option>
-                    <option value="Etiquette">Etiquette</option>
-                    <option value="Explosives">Explosives</option>
-                    <option value="Fencing">Fencing</option>
-                    <option value="Firearms">Firearms</option>
-                    <option value="Freerunning">Freerunning</option>
-                    <option value="History">History</option>
-                    <option value="Innuendo">Innuendo</option>
-                    <option value="Intimidate">Intimidate</option>
-                    <option value="Locks">Locks</option>
-                    <option value="Medicine">Medicine</option>
-                    <option value="Natural Philosophy">Natural Philosophy</option>
-                    <option value="Negotiate">Negotiate</option>
-                    <option value="Persuade">Persuade</option>
-                    <option value="Resilience">Resilience</option>
-                    <option value="Resolve">Resolve</option>
-                    <option value="Ride">Ride</option>
-                    <option value="Ships">Ships</option>
-                    <option value="Society">Society</option>
-                    <option value="Stealth">Stealth</option>
-                    <option value="Streetwise">Streetwise</option>
-                    <option value="Surgery">Surgery</option>
-                    <option value="Swimming">Swimming</option>
-                    <option value="Theology">Theology</option>
-                    <option value="Tracking">Tracking</option>
-                    <option value="Void Lore">Void Lore</option>
-                    <option value="Wilderness">Wilderness</option>
-                </select>                
-            </label>
-            <label class="header__field">
-                <input type="number" name="attr_focuslevel" min="1" max="5" value="1" /> 
-            </label>
+            <div class="rep--oneline">
+                <label class="header__field">
+                    <select name="attr_focusname"> 
+                        <option value="Acrobatics">Acrobatics</option>
+                        <option value="Archery">Archery</option>
+                        <option value="Boats">Boats</option>
+                        <option value="Brawling">Brawling</option>
+                        <option value="Carriages">Carriages</option>
+                        <option value="Concentrate">Concentrate</option>
+                        <option value="Counsel">Counsel</option>
+                        <option value="Deceive">Deceive</option>
+                        <option value="Engineering">Engineering</option>
+                        <option value="Etiquette">Etiquette</option>
+                        <option value="Explosives">Explosives</option>
+                        <option value="Fencing">Fencing</option>
+                        <option value="Firearms">Firearms</option>
+                        <option value="Freerunning">Freerunning</option>
+                        <option value="History">History</option>
+                        <option value="Innuendo">Innuendo</option>
+                        <option value="Intimidate">Intimidate</option>
+                        <option value="Locks">Locks</option>
+                        <option value="Medicine">Medicine</option>
+                        <option value="Natural Philosophy">Natural Philosophy</option>
+                        <option value="Negotiate">Negotiate</option>
+                        <option value="Persuade">Persuade</option>
+                        <option value="Resilience">Resilience</option>
+                        <option value="Resolve">Resolve</option>
+                        <option value="Ride">Ride</option>
+                        <option value="Ships">Ships</option>
+                        <option value="Society">Society</option>
+                        <option value="Stealth">Stealth</option>
+                        <option value="Streetwise">Streetwise</option>
+                        <option value="Surgery">Surgery</option>
+                        <option value="Swimming">Swimming</option>
+                        <option value="Theology">Theology</option>
+                        <option value="Tracking">Tracking</option>
+                        <option value="Void Lore">Void Lore</option>
+                        <option value="Wilderness">Wilderness</option>
+                    </select>
+                </label>
+                <label class="header__field">
+                    <input type="number" name="attr_focuslevel" min="1" max="5" value="1" /> 
+                </label>
+            </div>
         </fieldset>    
     </div>
 </div>
+
+<div class="section">
+    <div>
+        <h2>Talents</h2>
+        <fieldset class="repeating_talent"> 
+            <div class="rep--oneline">
+                <label class="header__field">
+                    <select name="attr_talentname"> 
+                        <optgroup label="Assassin's talents">
+                            <option value="Bespoke bloodletting">Bespoke bloodletting</option>
+                            <option value="The great equalizer">The great equalizer</option>
+                            <option value="Inhumane determination">Inhumane determination</option>
+                            <option value="Outsider’s grin">Outsider’s grin</option>    
+                        </optgroup>
+                        <optgroup label="Commander's talents">
+                            <option value="Whiskey and Cigars">Whiskey and Cigars</option>
+                            <option value="Get Back To It!">Get Back To It!</option>
+                            <option value="Pull rank">Pull rank</option>
+                            <option value="Rally">Rally</option>    
+                        </optgroup>
+                        <optgroup label="Courier's talents">
+                            <option value="City of whispers">City of whispers</option>
+                            <option value="Friends everywhere">Friends everywhere</option>
+                            <option value="Smuggler’s secrets">Smuggler’s secrets</option>
+                            <option value="Supply and demand">Supply and demand</option>    
+                        </optgroup>
+                        <optgroup label="Duelist's talents">
+                            <option value="Bravura blade">Bravura blade</option>
+                            <option value="Flashing steel">Flashing steel</option>
+                            <option value="Footwork">Footwork</option>
+                            <option value="Measured strike">Measured strike</option>    
+                        </optgroup>
+                        <optgroup label="Entrepreneur's talents">
+                            <option value="Black marketeer">Black marketeer</option>
+                            <option value="Investors">Investors</option>
+                            <option value="Sales pitch">Sales pitch</option>
+                            <option value="Self-made">Self-made</option>    
+                        </optgroup>
+                        <optgroup label="Explorer's talents">
+                            <option value="Expert cartographer">Expert cartographer</option>
+                            <option value="First glance">First glance</option>
+                            <option value="Hardy traveler">Hardy traveler</option>
+                            <option value="Surveyor">Surveyor</option>    
+                        </optgroup>
+                        <optgroup label="Guide's talents">
+                            <option value="Companion">Companion</option>
+                            <option value="Fieldcraft">Fieldcraft</option>
+                            <option value="Forager">Forager</option>
+                            <option value="Sage advice">Sage advice</option>    
+                        </optgroup>
+                        <optgroup label="Hunter's talents">
+                            <option value="Ambush expertise">Ambush expertise</option>
+                            <option value="Familiar tactics">Familiar tactics</option>
+                            <option value="Predator’s patience">Predator’s patience</option>
+                            <option value="Trapper">Trapper</option>    
+                        </optgroup>
+                        <optgroup label="Inventor's talents">
+                            <option value="Controlled detonation">Controlled detonation</option>
+                            <option value="Personal notes">Personal notes</option>
+                            <option value="Pushing the boundaries of progress">Pushing the boundaries of progress</option>
+                            <option value="Salvage for parts">Salvage for parts</option>    
+                        </optgroup>
+                        <optgroup label="Scholar's talents">
+                            <option value="Deep expertise">Deep expertise</option>
+                            <option value="Did the research">Did the research</option>
+                            <option value="Erudite exposition">Erudite exposition</option>
+                            <option value="Librarian">Librarian</option>    
+                        </optgroup>
+                        <optgroup label="Scout's talents">
+                            <option value="Constantly alert">Constantly alert</option>
+                            <option value="Fighting fit">Fighting fit</option>
+                            <option value="Hit and run">Hit and run</option>
+                            <option value="Like a shadow">Like a shadow</option>    
+                        </optgroup>
+                        <optgroup label="Sharpshooter's talents">
+                            <option value="Crack shot">Crack shot</option>
+                            <option value="Exploit weakness">Exploit weakness</option>
+                            <option value="Prized weapon">Prized weapon</option>
+                            <option value="Saboteur">Saboteur</option>    
+                        </optgroup>
+                        <optgroup label="Miscreant's talents">
+                            <option value="Dauntless">Dauntless</option>
+                            <option value="Fight dirty">Fight dirty</option>
+                            <option value="Put your back into it!">Put your back into it!</option>
+                            <option value="Shoulder charge">Shoulder charge</option>    
+                        </optgroup>
+                  </select>
+                </label>
+            </div>
+        </fieldset>    
+    </div>
+    <div>
+        <h2>Powers</h2>
+        <fieldset class="repeating_power"> 
+            <label class="header__field">
+                <select name="attr_powername"> 
+                    <optgroup label="Powers">
+                        <option value="Bend Time">Bend Time</option>
+                        <option value="Blink">Blink</option>
+                        <option value="Blood briar">Blood briar</option>
+                        <option value="Dark vision">Dark vision</option>
+                        <option value="Devouring swarm">Devouring swarm</option>
+                        <option value="Far reach">Far reach</option>
+                        <option value="Fog caller">Fog caller</option>
+                        <option value="Mesmerize">Mesmerize</option>
+                        <option value="Possession">Possession</option>
+                        <option value="Thorns">Thorns</option>
+                        <option value="Eye within">Eye within</option>    
+                    </optgroup>
+                    <optgroup label="Enhancements">
+                        <option value="Agility">Agility</option>
+                        <option value="Beast whispers">Beast whispers</option>
+                        <option value="Dark inspiration">Dark inspiration</option>
+                        <option value="Dark scrimshaw">Dark scrimshaw</option>
+                        <option value="Escape">Escape</option>
+                        <option value="Glimpse hollows">Glimpse hollows</option>
+                        <option value="Shadow kill">Shadow kill</option>
+                        <option value="Strength">Strength</option>
+                        <option value="Vitality">Vitality</option>
+                    </optgroup>
+                </select>                
+            </label>
+        </fieldset>   
+    </div>
+</div>
+
+<div class="section">
+    <h2>Belongings</h2>
+    <fieldset class="repeating_belonging"> 
+        <div class="rep--oneline">
+            <input class="item__name" type="text" name="attr_name" placeholder="Name of the item" style="flex:1.5" />
+            <input class="item__truth" type="text" name="attr_truth" placeholder="Truth(s), power(s)" /> 
+            <select class="item__type" name="attr_type">
+                <option value="regular"> Regular item</option>
+                <option value="bonecharm"> Bonecharm</option>
+                <option value="artefact"> Artefact</option>
+            </select>
+        </div>
+    </fieldset>   
+</div>
+
+<div class="section">
+    <h2>Additional truths</h2>
+    <fieldset class="repeating_extratruths"> 
+        <input type="text" name="attr_name" placeholder="Additional truth" /> 
+    </fieldset>   
+
+</div>
+
+<div class="section">
+    <h2>Notes</h2>
+    <label>
+        <textarea name="attr_notes"></textarea>
+    </label>
+</div>
+
 <div class="footer">
-    <div>
-        <h2 class="section">Powers</h2>
-        <label>
-            <button>Add a power</button>
-        </label>    
-    </div>
-    <div>
-        <h2 class="section">Belongings</h2>
-        <label>
-            <button>Add a meaningful belonging</button>
-        </label>
-        <label>
-            <span class="field__header">Other belongings</span>
-            <textarea name="attr_belongings" placeholder="Misc belongings, that do not possess truths."></textarea>
-        </label>    
-    </div>
-    <div>
-        <h2 class="section">Notes</h2>
-        <label>
-            <textarea name="attr_notes"></textarea>
-        </label>
-    </div>
+    @2020 Bethesda Softworks, a ZeniMax Media Company. All Rights Reserved. Dishonored: the Roleplaying Game has been developed by Modiphius Entertainment. Character sheet implemented for Roll20 by Pierre V.
 </div>
 
 <script type="text/worker">
-    console.log('Dishonored character sheet initializing');
-
-    const allTalents = [
-        { name: 'Bespoke bloodletting', archetype: 'assassin'},
-        { name: 'The great equalizer', archetype: 'assassin' },
-        { name: 'Inhumane determination', archetype: 'assassin' },
-        { name: 'Outsider’s grin', archetype: 'assassin' },
-    ];
+    console.log('Dishonored character sheet initializing. Awesome magic might happen here later!');
 </script>

@@ -4,21 +4,28 @@
     background: white;
 }
 
-.sheet-center--top, .sheet-center--bottom, .sheet-footer {
+.sheet-section {
     display: flex;
     justify-content: space-around;
-    margin: 2em 0;
+    flex-wrap: wrap;
+    margin: 5em 0;
 }
 
 .sheet-center {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-between;
     border-radius: 50%;
     border: 1px solid #999;
     text-align: center;
     padding: 0 5em;
+    background-image: url("https://gogs.vanhulst.one/vanhulst/Dishonored_character_sheet/raw/branch/master/images/outsider.png");
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-width: 338px;
+    min-height: 331px;
 }
 
 .sheet-logo {
@@ -73,11 +80,12 @@
     text-align: center;
 }
 
-.sheet-header__field > input, .sheet-header__field > select {
+.charsheet input, .charsheet select {
     border: 0;
     border-radius: 0;
     border-bottom: 2px solid #999;
     text-align: center;
+    margin: 0;
 }
 
 .sheet-field__header {
@@ -93,7 +101,38 @@ input[type="number"] {
     text-align: center;
 }
 
-.sheet-section {
+h2 {
     text-transform: uppercase;
     font-family: 'M PLUS Rounded 1c', sans-serif;
+    width: 100%;
+}
+
+.sheet-skills, .sheet-skills > label {
+    text-align: right;
+}
+
+/* Repeating fields */
+
+.sheet-rep--oneline {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+select[name="attr_level"] {
+    width: 5em;
+}
+
+.sheet-item__name {
+    flex: 1;
+    margin-right: 1em;
+}
+
+.sheet-item__truth {
+    flex: 3;
+    margin-right: 1em;
+}
+
+.sheet-item__type {
+    width: 5em;
 }
