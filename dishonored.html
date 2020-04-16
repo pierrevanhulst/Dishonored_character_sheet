@@ -1,25 +1,24 @@
 <div class="header">
-    <img src="https://gogs.vanhulst.one/vanhulst/Dishonored_character_sheet/src/branch/master/images/dishonored-logo.png" alt="Dishonored: the Roleplaying Game">
+    <img class="logo" src="https://gogs.vanhulst.one/vanhulst/Dishonored_character_sheet/raw/branch/master/images/dishonored-logo.png" alt="Dishonored: the Roleplaying Game">
     <hr/>
-    <label>
-        Name
-        <input type="text" name="name"/>
+    <label class="header__field">
+        <input type="text" name="attr_character_name" />
+        <span class="field__header">Name</span>
     </label>
-    <label>
-        Age
-        <input type="text" name="age"/>
+    <label class="header__field">
+        <input type="text" name="attr_age" />
+        <span class="field__header">Age</span>
     </label>
-    <label>
-        First truth
-        <input type="text" name="truth1"/>
+    <label class="header__field">
+        <input type="text" name="attr_truth1" />
+        <span class="field__header">First truth</span>
     </label>
-    <label>
-        Second truth
-        <input type="text" name="truth2"/>
+    <label class="header__field">
+        <input type="text" name="attr_truth2" />
+        <span class="field__header">Second truth</span>
     </label>
-    <label>
-        Archetype
-        <select name="archetype">
+    <label class="header__field">
+        <select name="attr_archetype">
             <option value="assassin">Assassin</option>
             <option value="commander">Commander</option>
             <option value="courier">Courier</option>
@@ -34,38 +33,178 @@
             <option value="sharpshooter">Sharpshooter</option>
             <option value="miscreant">Miscreant</option>
         </select>
+        Archetype
     </label>
 </div>
 <div class="center--top">
-    <hr/>
-    <h2>Skills</h2>
-    <hr/>
-    <h2>Styles</h2>
-    <hr/>
+    <div>
+        <h2 class="section">Skills</h2>
+        <label>
+            <span class="field__header">Fight</span>
+            <input type="number" name="attr_fight" min="1" max="8" value="4" />
+        </label>
+        <label>
+            <span class="field__header">Move</span>
+            <input type="number" name="attr_move" min="1" max="8" value="4" />
+        </label>
+        <label>
+            <span class="field__header">Study</span>
+            <input type="number" name="attr_study" min="1" max="8" value="4" />
+        </label>
+        <label>
+            <span class="field__header">Survive</span>
+            <input type="number" name="attr_survive" min="1" max="8" value="4" />
+        </label>
+        <label>
+            <span class="field__header">Talk</span>
+            <input type="number" name="attr_talk" min="1" max="8" value="4" />
+        </label>
+        <label>
+            <span class="field__header">Tinker</span>
+            <input type="number" name="attr_tinker" min="1" max="8" value="4" />
+        </label>
+    </div>
+    <div class="center">
+        <div>
+            <h2 class="section">Stress</h2>
+            <input name="attr_stress" type="range" min="0" max="@{survive}" value="0" class="slider" />    
+        </div>
+        <div>
+            <h2 class="section">Void Points</h2>
+            <input name="attr_void" type="number" value="0" />    
+        </div>
+    </div>
+    <div>
+        <h2 class="section">Styles</h2>
+        <label>
+            <span class="field__header">Boldly</span>
+            <input type="number" name="attr_boldly" min="1" max="8" value="4" />
+        </label>
+        <label>
+            <span class="field__header">Carefully</span>
+            <input type="number" name="attr_carefully" min="1" max="8" value="4" />
+        </label>
+        <label>
+            <span class="field__header">Cleverly</span>
+            <input type="number" name="attr_cleverly" min="1" max="8" value="4" />
+        </label>
+        <label>
+            <span class="field__header">Forcefully</span>
+            <input type="number" name="attr_forcefully" min="1" max="8" value="4" />
+        </label>
+        <label>
+            <span class="field__header">Quietly</span>
+            <input type="number" name="attr_quietly" min="1" max="8" value="4" />
+        </label>
+        <label>
+            <span class="field__header">Swiftly</span>
+            <input type="number" name="attr_swiftly" min="1" max="8" value="4" />
+        </label>
+    </div>
 </div>
-<div class="center">
-    <h2>Stress</h2>
-    <h2>Void Points</h2>
-    <hr/>
-</div>
+
 <div class="center--bottom">
-    <h2>Talents</h2>
-    <hr/>
-    <h2>Focuses</h2>
-    <hr/>
-    <h2>Contacts</h2>
-    <hr/>
+    <div>
+        <h2 class="section">Talents</h2>
+        <label>
+            <button>Add a talent</button>
+        </label>    
+    </div>
+    <div>
+        <h2 class="section">Focuses</h2>
+        <fieldset class="repeating_focus"> 
+            <label class="header__field">
+                <select name="attr_focusname"> 
+                    <option value="Acrobatics">Acrobatics</option>
+                    <option value="Archery">Archery</option>
+                    <option value="Boats">Boats</option>
+                    <option value="Brawling">Brawling</option>
+                    <option value="Carriages">Carriages</option>
+                    <option value="Concentrate">Concentrate</option>
+                    <option value="Counsel">Counsel</option>
+                    <option value="Deceive">Deceive</option>
+                    <option value="Engineering">Engineering</option>
+                    <option value="Etiquette">Etiquette</option>
+                    <option value="Explosives">Explosives</option>
+                    <option value="Fencing">Fencing</option>
+                    <option value="Firearms">Firearms</option>
+                    <option value="Freerunning">Freerunning</option>
+                    <option value="History">History</option>
+                    <option value="Innuendo">Innuendo</option>
+                    <option value="Intimidate">Intimidate</option>
+                    <option value="Locks">Locks</option>
+                    <option value="Medicine">Medicine</option>
+                    <option value="Natural Philosophy">Natural Philosophy</option>
+                    <option value="Negotiate">Negotiate</option>
+                    <option value="Persuade">Persuade</option>
+                    <option value="Resilience">Resilience</option>
+                    <option value="Resolve">Resolve</option>
+                    <option value="Ride">Ride</option>
+                    <option value="Ships">Ships</option>
+                    <option value="Society">Society</option>
+                    <option value="Stealth">Stealth</option>
+                    <option value="Streetwise">Streetwise</option>
+                    <option value="Surgery">Surgery</option>
+                    <option value="Swimming">Swimming</option>
+                    <option value="Theology">Theology</option>
+                    <option value="Tracking">Tracking</option>
+                    <option value="Void Lore">Void Lore</option>
+                    <option value="Wilderness">Wilderness</option>
+                </select>                
+            </label>
+            <label class="header__field">
+                <input type="number" name="attr_focuslevel" min="1" max="5" value="1" /> 
+            </label>
+        </fieldset>    
+    </div>
+    <div>
+        <h2 class="section">Contacts</h2>
+        <fieldset class="repeating_contact"> 
+            <label class="header__field">
+                <span class="field__header">Name</span>
+                <input type="text" name="attr_name" placeholder="Name of the contact" />
+            </label>
+            <label class="header__field">
+                <span class="field__header">Level</span>
+                <select name="attr_focusname"> 
+                    <option value="great">Great</option>
+                    <option value="fair">Fair</option>
+                    <option value="neutral" selected>Neutral</option>
+                    <option value="poor">Poor</option>
+                    <option value="dire">Dire</option>
+                </select>    
+            </label>
+        </fieldset>    
+    </div>
 </div>
 <div class="footer">
-    <h2>Powers</h2>
-    <hr/>
-    <h2>Belongings</h2>
-    <hr/>
-    <h2>Notes</h2>
+    <div>
+        <h2 class="section">Powers</h2>
+        <label>
+            <button>Add a power</button>
+        </label>    
+    </div>
+    <div>
+        <h2 class="section">Belongings</h2>
+        <label>
+            <button>Add a meaningful belonging</button>
+        </label>
+        <label>
+            <span class="field__header">Other belongings</span>
+            <textarea name="attr_belongings" placeholder="Misc belongings, that do not possess truths."></textarea>
+        </label>    
+    </div>
+    <div>
+        <h2 class="section">Notes</h2>
+        <label>
+            <textarea name="attr_notes"></textarea>
+        </label>
+    </div>
 </div>
 
 <script type="text/worker">
     console.log('Dishonored character sheet initializing');
+
     const allTalents = [
         { name: 'Bespoke bloodletting', archetype: 'assassin'},
         { name: 'The great equalizer', archetype: 'assassin' },
