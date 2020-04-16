@@ -105,6 +105,25 @@
 
 <div class="center--bottom">
     <div>
+        <h2 class="section">Contacts</h2>
+        <fieldset class="repeating_contact"> 
+            <label class="header__field">
+                <span class="field__header">Name</span>
+                <input type="text" name="attr_name" placeholder="Name of the contact" />
+            </label>
+            <label class="header__field">
+                <span class="field__header">Level</span>
+                <select name="attr_focusname"> 
+                    <option value="great">Great</option>
+                    <option value="fair">Fair</option>
+                    <option value="neutral" selected>Neutral</option>
+                    <option value="poor">Poor</option>
+                    <option value="dire">Dire</option>
+                </select>    
+            </label>
+        </fieldset>    
+    </div>
+    <div>
         <h2 class="section">Talents</h2>
         <label>
             <button>Add a talent</button>
@@ -154,25 +173,6 @@
             </label>
             <label class="header__field">
                 <input type="number" name="attr_focuslevel" min="1" max="5" value="1" /> 
-            </label>
-        </fieldset>    
-    </div>
-    <div>
-        <h2 class="section">Contacts</h2>
-        <fieldset class="repeating_contact"> 
-            <label class="header__field">
-                <span class="field__header">Name</span>
-                <input type="text" name="attr_name" placeholder="Name of the contact" />
-            </label>
-            <label class="header__field">
-                <span class="field__header">Level</span>
-                <select name="attr_focusname"> 
-                    <option value="great">Great</option>
-                    <option value="fair">Fair</option>
-                    <option value="neutral" selected>Neutral</option>
-                    <option value="poor">Poor</option>
-                    <option value="dire">Dire</option>
-                </select>    
             </label>
         </fieldset>    
     </div>
