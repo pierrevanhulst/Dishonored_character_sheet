@@ -67,7 +67,8 @@
     <div class="center">
         <div>
             <h2>Stress</h2>
-            <input name="attr_stress" type="range" min="0" max="@{survive}" value="0" class="slider" />    
+            <input name="attr_stress" type="number" min="0" max="8" value="0" />
+            / <span name="attr_stress_max"></span>
         </div>
         <div>
             <h2>Void Points</h2>
@@ -336,5 +337,24 @@
 </div>
 
 <script type="text/worker">
-    console.log('Dishonored character sheet initializing. Awesome magic might happen here later!');
+    console.log('Dishonored character sheet initializing.');
+
+    on("change:survive", survive => {
+        getAttrs(['stress'], values => {
+            const changes = {
+                stress_max: survive.newValue
+            };
+            if (survive.newValue < values.stress) changes.stress = survive.newValue;
+            setAttrs(changes);
+        });
+    });
+    on("change:stress", stress => {
+        getAttrs(['stress_max'], values => {
+            if (values.stress_max < stress.newValue) {
+                setAttrs({
+                    stress: values.stress_max
+                });
+            }
+        });
+    });
 </script>
