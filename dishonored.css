@@ -16,8 +16,6 @@
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    border-radius: 50%;
-    border: 1px solid #999;
     text-align: center;
     padding: 0 5em;
     background-image: url("https://gogs.vanhulst.one/vanhulst/Dishonored_character_sheet/raw/branch/master/images/outsider.png");
@@ -105,11 +103,20 @@
 }
 
 .charsheet input[type="number"] {
-    padding-bottom: .5em;
-    border-radius: 50%;
+    padding-bottom: 0;
     width: 3.5em;
     height: 3.5em;
     text-align: center;
+}
+
+.charsheet input[type="number"].sheet-central {
+    width: 7em;
+    height: 7em;
+    background-image: url('https://gogs.vanhulst.one/vanhulst/Dishonored_character_sheet/raw/branch/master/images/circle.png');
+    background-position: bottom;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-color: transparent;
 }
 
 h2 {
