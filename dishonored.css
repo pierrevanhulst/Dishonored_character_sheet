@@ -129,6 +129,13 @@ h2 {
     text-align: right;
 }
 
+.sheet-roll {
+    position: fixed;
+    right: 1em;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
 /* Repeating fields */
 
 .sheet-rep--oneline {
