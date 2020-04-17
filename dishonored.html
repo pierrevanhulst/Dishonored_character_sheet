@@ -429,7 +429,7 @@
     /** End Stress maximum */
 
     /** Roll */
-    on('clicked:rollmodal clicked:'', () => {
+    on('clicked:rollmodal clicked:', () => {
         getAttrs(['rollmodal'], values => {
             setAttrs({
                 rollmodal: !values.rollmodal
@@ -460,6 +460,7 @@
             });
         });
     });
+
     /** End Roll */
 </script>
 <!-- End Sheet Worker -->

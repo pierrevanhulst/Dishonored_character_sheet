@@ -247,13 +247,8 @@ select[name="attr_level"] {
     width: 5em;
 }
 
-/**** Roll Templates ****/
-.sheet-rolltemplate-roll {
+.sheet-rolltemplate-roll .sheet-template__header {
     font-family: 'M PLUS Rounded 1c', sans-serif;
-    background-color: white;
-}
-
-.sheet-template__header {
     background-image: url("https://gogs.vanhulst.one/vanhulst/Dishonored_character_sheet/raw/branch/master/images/outsider-mark.png");
     background-size: contain;
     background-position: left;
@@ -265,17 +260,18 @@ select[name="attr_level"] {
     box-sizing: border-box;
 }
 
-.sheet-template__body {
+.sheet-rolltemplate-roll .sheet-template__body {
+    background-color: white;
     padding: 1em;
 }
 
-.sheet-template__body > div {
+.sheet-rolltemplate-roll .sheet-template__body > div {
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
 
-.sheet-template__body > .numeric > div {
+.sheet-rolltemplate-roll .sheet-template__body > .numeric > div {
     display: flex;
     flex-direction: column;
     align-items: center;
