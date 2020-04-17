@@ -98,7 +98,7 @@
     padding-bottom: 1.5em;
     background-image: url('https://gogs.vanhulst.one/vanhulst/Dishonored_character_sheet/raw/branch/master/images/underline-3.png');
     background-position: bottom;
-    background-size: contain;
+    background-size: 100% 10px;
     background-repeat: no-repeat;
 }
 
