@@ -36,6 +36,13 @@
         <span class="field__header">Archetype</span>
     </label>
 </div>
+
+<div class="roll">
+    <button type="action" name="act_rollmodal">
+        <img src="https://gogs.vanhulst.one/vanhulst/Dishonored_character_sheet/raw/branch/master/images/d20.png" alt="Make a roll">
+    </button>
+</div>
+
 <div class="section">
     <div class="skills">
         <h2>Skills</h2>
@@ -334,18 +341,68 @@
     </label>
 </div>
 
+<input class="rollModal__trigger" type="hidden" name="attr_rollmodal">
+<div class="rollModal">
+    <div class="rollModal__container">
+        <div class="rollModal__header">
+            <h2>Make a skill check</h2>
+            <button type="action" name="act_rollmodal">
+                <span>&#x2716;</span>
+            </button>
+        </div>
+        <label>
+            <h3>Skill</h3>
+            <select name="attr_checkskill">
+                <option value="fight">Fight</option>
+                <option value="move">Move</option>
+                <option value="study">Study</option>
+                <option value="survive">Survive</option>
+                <option value="talk">Talk</option>
+                <option value="tinker">Tinker</option>
+            </select>
+            <input type="hidden" name="attr_checkskillvalue">
+        </label>
+        <label>
+            <h3>Style</h3>
+            <select name="attr_checkstyle">
+                <option value="boldly">Boldly</option>
+                <option value="carefully">Carefully</option>
+                <option value="cleverly">Cleverly</option>
+                <option value="forcefully">Forcefully</option>
+                <option value="quietly">Quietly</option>
+                <option value="swiftly">Swiftly</option>
+            </select>
+            <input type="hidden" name="attr_checkstylevalue">
+        </label>
+        <label>
+            <h3>Focus</h3>
+            <select name="attr_checkfocus">
+                <option value="none">None</option>
+            </select>
+        </label>
+        <div class="rollModal__container__misc">
+            <label>
+                <h3>Dice</h3>
+                <input type="number" min="1" max="5" value="2" name="attr_checkdice">
+            </label>
+            <label>
+                <h3>Difficulty</h3>
+                <input type="number" min="1" max="5" value="1" name="attr_checkdifficulty">
+            </label>    
+        </div>
+        <input type="hidden" name="attr_totalvalue"/>
+        <button type="roll" value="/roll @{checkdice}d20<@{totalvalue}">Let Fate decides!</button>
+    </div>
+</div>
+
 <div class="footer">
-    @2020 Bethesda Softworks, a ZeniMax Media Company. All Rights Reserved. Dishonored: the Roleplaying Game has been developed by Modiphius Entertainment. Character sheet implemented for Roll20 by Pierre V. Credits to <a href="https://www.onlygfx.com/">OnlyGFX.com</a> for the ink brush under each field of the sheet. Credits to Vandymagination for the Dice icon.
+    @2020 Bethesda Softworks, a ZeniMax Media Company. All Rights Reserved. Dishonored: the Roleplaying Game has been developed by Modiphius Entertainment. Character sheet implemented for Roll20 by Pierre V. Credits to <a href="https://www.onlygfx.com/">OnlyGFX.com</a> for the ink brush under each field of the sheet. Credits to Vandymagination for the D20 icon.
 </div>
-
-<div class="roll">
-    <img src="" alt="Make a roll">
-</div>
-
 
 <script type="text/worker">
     console.log('Dishonored character sheet initializing.');
 
+    /** Stress maximum */
     on("change:survive", survive => {
         getAttrs(['stress'], values => {
             const changes = {
@@ -355,6 +412,7 @@
             setAttrs(changes);
         });
     });
+
     on("change:stress", stress => {
         getAttrs(['stress_max'], values => {
             if (values.stress_max < stress.newValue) {
@@ -364,4 +422,40 @@
             }
         });
     });
+
+    /** End Stress maximum */
+
+    /** Roll */
+    on("clicked:rollmodal clicked:", () => {
+        getAttrs(['rollmodal'], values => {
+            setAttrs({
+                rollmodal: !values.rollmodal
+            });
+        });
+    });
+
+    on("change:checkskill", skill => {
+        getAttrs([skill.newValue], values => {
+            setAttrs({
+                checkskillvalue: values[skill.newValue]
+            });
+        });
+    });
+
+    on("change:checkstyle", style => {
+        getAttrs([style.newValue], values => {
+            setAttrs({
+                checkstylevalue: values[style.newValue]
+            });
+        });
+    });
+
+    on("change:checkstylevalue change:checkskillvalue", () => {
+        getAttrs(['checkskillvalue','checkstylevalue'], values => {
+            setAttrs({
+                totalvalue: (+values.checkskillvalue) + (+values.checkstylevalue)
+            });
+        });
+    });
+    /** End Roll */
 </script>
