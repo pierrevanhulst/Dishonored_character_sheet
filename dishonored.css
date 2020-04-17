@@ -80,24 +80,34 @@
     text-align: center;
 }
 
-.charsheet input, .charsheet select {
-    border: 0;
-    border-radius: 0;
-    border-bottom: 2px solid #999;
-    text-align: center;
-    margin: 0;
-}
-
 .sheet-field__header {
     text-transform: uppercase;
     font-family: 'M PLUS Rounded 1c', sans-serif;
 }
 
-input[type="number"] {
+.charsheet input, .charsheet select {
+    border: 0;
+    border-radius: 0;
+    text-align: center;
+    margin: 0;
+}
+
+.charsheet select {
+    border-bottom: 2px solid #999;
+}
+
+.charsheet input {
+    padding-bottom: 2em;
+    background-image: url('https://gogs.vanhulst.one/vanhulst/Dishonored_character_sheet/raw/branch/master/images/underline.png');
+    background-position: bottom;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.charsheet input[type="number"] {
     border-radius: 50%;
     width: 3.5em;
     height: 3.5em;
-    border: 1px solid #999;
     text-align: center;
 }
 
