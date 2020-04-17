@@ -341,6 +341,11 @@
     </label>
 </div>
 
+<div class="footer">
+    @2020 Bethesda Softworks, a ZeniMax Media Company. All Rights Reserved. Dishonored: the Roleplaying Game has been developed by Modiphius Entertainment. Character sheet implemented for Roll20 by Pierre V. Credits to <a href="https://www.onlygfx.com/">OnlyGFX.com</a> for the ink brush under each field of the sheet. Credits to Vandymagination for the D20 icon.
+</div>
+
+<!-- Roll Modal -->
 <input class="rollModal__trigger" type="hidden" name="attr_rollmodal">
 <div class="rollModal">
     <div class="rollModal__container">
@@ -388,17 +393,15 @@
             <label>
                 <h3>Difficulty</h3>
                 <input type="number" min="1" max="5" value="1" name="attr_checkdifficulty">
-            </label>    
+            </label>
         </div>
         <input type="hidden" name="attr_totalvalue"/>
-        <button type="roll" value="/roll @{checkdice}d20<@{totalvalue}">Let Fate decides!</button>
+        <button type="roll" value="&{template:roll} {{skill=@{checkskill}}} {{style=@{checkstyle}}} {{dice=@{checkdice}}} {{difficulty=@{checkdifficulty}}} {{result=[[@{checkdice}d20<@{totalvalue}]]}}">Let Fate decides!</button>
     </div>
 </div>
+<!-- End Roll Modal -->
 
-<div class="footer">
-    @2020 Bethesda Softworks, a ZeniMax Media Company. All Rights Reserved. Dishonored: the Roleplaying Game has been developed by Modiphius Entertainment. Character sheet implemented for Roll20 by Pierre V. Credits to <a href="https://www.onlygfx.com/">OnlyGFX.com</a> for the ink brush under each field of the sheet. Credits to Vandymagination for the D20 icon.
-</div>
-
+<!-- Sheet Worker -->
 <script type="text/worker">
     console.log('Dishonored character sheet initializing.');
 
@@ -426,7 +429,7 @@
     /** End Stress maximum */
 
     /** Roll */
-    on("clicked:rollmodal clicked:", () => {
+    on('clicked:rollmodal clicked:'', () => {
         getAttrs(['rollmodal'], values => {
             setAttrs({
                 rollmodal: !values.rollmodal
@@ -434,7 +437,7 @@
         });
     });
 
-    on("change:checkskill", skill => {
+    on('change:checkskill', skill => {
         getAttrs([skill.newValue], values => {
             setAttrs({
                 checkskillvalue: values[skill.newValue]
@@ -442,7 +445,7 @@
         });
     });
 
-    on("change:checkstyle", style => {
+    on('change:checkstyle', style => {
         getAttrs([style.newValue], values => {
             setAttrs({
                 checkstylevalue: values[style.newValue]
@@ -450,7 +453,7 @@
         });
     });
 
-    on("change:checkstylevalue change:checkskillvalue", () => {
+    on('change:checkstylevalue change:checkskillvalue', () => {
         getAttrs(['checkskillvalue','checkstylevalue'], values => {
             setAttrs({
                 totalvalue: (+values.checkskillvalue) + (+values.checkstylevalue)
@@ -459,3 +462,44 @@
     });
     /** End Roll */
 </script>
+<!-- End Sheet Worker -->
+
+<!-- Roll Templates -->
+<rolltemplate class="sheet-rolltemplate-roll">
+    <div class="sheet-template-container">
+        <div class="sheet-template__header">
+            <h2>Roll</h2>
+        </div>
+        <div class="sheet-template__body">
+            <div>
+                <h3>Skill</h3>
+                <span class="text">{{skill}}</span>
+            </div>
+            <div>
+                <h3>Style</h3>
+                <span class="text">{{style}}</span>
+            </div>
+            {{#focus}}
+            <div>
+                <h3>Focus</h3>
+                <span class="text">{{focus}}</span>
+            </div>
+            {{/focus}}
+            <div class="numeric">
+                <div>
+                    <h3>Dice</h3>
+                    <span class="number">{{dice}}</span>
+                </div>
+                <div>
+                    <h3>Difficulty</h3>
+                    <span class="number">{{difficulty}}</span>
+                </div>    
+            </div>
+            <div>
+                <h3>Success(es)</h3>
+                <span class="number">{{result}}</span>
+            </div>
+        </div>
+    </div>
+</rolltemplate>
+<!-- End Roll Templates -->

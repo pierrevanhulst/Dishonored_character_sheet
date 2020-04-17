@@ -221,7 +221,7 @@ input[type=checkbox] {
     }
 }
 
-/* Repeating fields */
+/**** Repeating fields ****/
 
 .sheet-rep--oneline {
     display: flex;
@@ -245,4 +245,61 @@ select[name="attr_level"] {
 
 .sheet-item__type {
     width: 5em;
+}
+
+/**** Roll Templates ****/
+.sheet-rolltemplate-roll {
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+    background-color: white;
+}
+
+.sheet-template__header {
+    background-image: url("https://gogs.vanhulst.one/vanhulst/Dishonored_character_sheet/raw/branch/master/images/outsider-mark.png");
+    background-size: contain;
+    background-position: left;
+    background-repeat: no-repeat;
+    background-color: black;
+    color: white;
+    text-align: right;
+    padding: 1em .5em 1em 0;
+    box-sizing: border-box;
+}
+
+.sheet-template__body {
+    padding: 1em;
+}
+
+.sheet-template__body > div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.sheet-template__body > .numeric > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+.sheet-rolltemplate-roll .sheet-text {
+    padding-bottom: 1.5em;
+    background-image: url('https://gogs.vanhulst.one/vanhulst/Dishonored_character_sheet/raw/branch/master/images/underline-3.png');
+    background-position: bottom;
+    background-size: 100% 10px;
+    background-repeat: no-repeat;
+}
+
+.sheet-rolltemplate-roll .sheet-number {
+    width: 5em;
+    height: 5em;
+    background-image: url('https://gogs.vanhulst.one/vanhulst/Dishonored_character_sheet/raw/branch/master/images/circle.png');
+    background-position: bottom;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
