@@ -280,10 +280,10 @@ select[name="attr_level"] {
 
 
 .sheet-rolltemplate-roll .sheet-text {
-    padding-bottom: 1.5em;
+    padding-bottom: .5em;
     background-image: url('https://gogs.vanhulst.one/vanhulst/Dishonored_character_sheet/raw/branch/master/images/underline-3.png');
     background-position: bottom;
-    background-size: 100% 10px;
+    background-size: 100% 3px;
     background-repeat: no-repeat;
 }
 

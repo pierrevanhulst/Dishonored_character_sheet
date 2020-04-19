@@ -383,7 +383,43 @@
             <h3>Focus</h3>
             <select name="attr_checkfocus">
                 <option value="none">None</option>
+                <option value="acrobatics">Acrobatics</option>
+                <option value="archery">Archery</option>
+                <option value="boats">Boats</option>
+                <option value="brawling">Brawling</option>
+                <option value="carriages">Carriages</option>
+                <option value="concentrate">Concentrate</option>
+                <option value="counsel">Counsel</option>
+                <option value="deceive">Deceive</option>
+                <option value="engineering">Engineering</option>
+                <option value="etiquette">Etiquette</option>
+                <option value="explosives">Explosives</option>
+                <option value="fencing">Fencing</option>
+                <option value="firearms">Firearms</option>
+                <option value="freerunning">Freerunning</option>
+                <option value="history">History</option>
+                <option value="innuendo">Innuendo</option>
+                <option value="intimidate">Intimidate</option>
+                <option value="locks">Locks</option>
+                <option value="medicine">Medicine</option>
+                <option value="naturalphilosophy">Natural Philosophy</option>
+                <option value="negotiate">Negotiate</option>
+                <option value="persuade">Persuade</option>
+                <option value="resilience">Resilience</option>
+                <option value="resolve">Resolve</option>
+                <option value="ride">Ride</option>
+                <option value="ships">Ships</option>
+                <option value="society">Society</option>
+                <option value="stealth">Stealth</option>
+                <option value="streetwise">Streetwise</option>
+                <option value="surgery">Surgery</option>
+                <option value="swimming">Swimming</option>
+                <option value="theology">Theology</option>
+                <option value="tracking">Tracking</option>
+                <option value="voidlore">Void Lore</option>
+                <option value="wilderness">Wilderness</option>
             </select>
+            <input type="hidden" name="attr_checkfocusvalue" value="1">
         </label>
         <div class="rollModal__container__misc">
             <label>
@@ -396,7 +432,7 @@
             </label>
         </div>
         <input type="hidden" name="attr_totalvalue"/>
-        <button type="roll" value="&{template:roll} {{skill=@{checkskill}}} {{style=@{checkstyle}}} {{dice=@{checkdice}}} {{difficulty=@{checkdifficulty}}} {{result=[[@{checkdice}d20<@{totalvalue}]]}}">Let Fate decides!</button>
+        <button type="roll" value="&{template:roll} {{skill=@{checkskill}}} {{style=@{checkstyle}}} {{focus=@{checkfocus}}} {{dice=@{checkdice}}} {{difficulty=@{checkdifficulty}}} {{result=[[@{checkdice}d20sacs<@{checkfocusvalue}cf20<@{totalvalue}]]}}">Let Fate decides!</button>
     </div>
 </div>
 <!-- End Roll Modal -->
@@ -429,13 +465,17 @@
     /** End Stress maximum */
 
     /** Roll */
-    on('clicked:rollmodal clicked:', () => {
+    on('clicked:rollmodal', () => {
         getAttrs(['rollmodal'], values => {
             setAttrs({
                 rollmodal: !values.rollmodal
             });
         });
     });
+    
+    on('mouseover:rollmodal', () => {
+        console.log('moused over')
+    })
 
     on('change:checkskill', skill => {
         getAttrs([skill.newValue], values => {
@@ -451,6 +491,32 @@
                 checkstylevalue: values[style.newValue]
             });
         });
+    });
+
+    on('change:checkfocus', focus => {
+        getSectionIDs('repeating_focus', selectedFocus => {
+            const fNames = selectedFocus.map(s => `repeating_focus_${s}_focusname`);
+            console.log('fnames', fNames);
+            getAttrs(fNames, names => {
+                const nIndex = Object.values(names).indexOf(focus.newValue);
+                console.log('nindex', nIndex, names, focus.newValue);
+                if(nIndex === -1) {
+                    setAttrs({
+                        checkfocusvalue: 1
+                    });        
+                } else {
+                    const key = Object.keys(names)[nIndex].split('_');
+                    key.pop();
+                    key.push('focuslevel');
+                    const keyLevel = key.join('_');
+                    getAttrs([key.join('_')], level => {
+                        setAttrs({
+                            checkfocusvalue: level[keyLevel]
+                        });
+                    })
+                }
+            })
+        })
     });
 
     on('change:checkstylevalue change:checkskillvalue', () => {
