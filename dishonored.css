@@ -130,9 +130,6 @@ h2, h3 {
 }
 
 .sheet-roll {
-    position: sticky;
-    top: 5%;
-    transform: translateY(-50%);
     overflow: hidden;
     padding: 1em;
 }
@@ -169,6 +166,7 @@ input[type=checkbox] {
     transition: opacity .2s ease-in-out;
     opacity: 0;
     pointer-events: none;
+    z-index: 1;
 }
 
 .sheet-rollModal__container {
@@ -298,6 +296,24 @@ select[name="attr_level"] {
     display: flex;
     align-items: center;
     justify-content: center;
+    position: relative;
+}
+
+.sheet-rolltemplate-roll .sheet-number .sheet-details {
+    opacity: 0;
+    pointer-events: none;
+    position: absolute;
+    right: 0;
+    top: 100%;
+    transition: all .2s ease-in-out;
+    background-color: white;
+    padding: .5rem;
+    box-shadow: 0 5px 5px -2px rgba(0,0,0,.4);
+    width: 10em;
+}
+
+.sheet-rolltemplate-roll .sheet-number:hover .sheet-details {
+    opacity: 1;
 }
 
 .sheet-rolltemplate-roll .sheet-template__footer {

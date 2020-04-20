@@ -1,6 +1,10 @@
 <div class="header">
     <img class="logo" src="https://gogs.vanhulst.one/vanhulst/Dishonored_character_sheet/raw/branch/master/images/dishonored-logo.png" alt="Dishonored: the Roleplaying Game">
-    <hr/>
+    <div class="roll">
+        <button type="action" name="act_rollmodal">
+            <img src="https://gogs.vanhulst.one/vanhulst/Dishonored_character_sheet/raw/branch/master/images/d20.png" alt="Make a roll">
+        </button>
+    </div>
     <label class="header__field">
         <input type="text" name="attr_character_name" />
         <span class="field__header">Name</span>
@@ -35,12 +39,6 @@
         </select>
         <span class="field__header">Archetype</span>
     </label>
-</div>
-
-<div class="roll">
-    <button type="action" name="act_rollmodal">
-        <img src="https://gogs.vanhulst.one/vanhulst/Dishonored_character_sheet/raw/branch/master/images/d20.png" alt="Make a roll">
-    </button>
 </div>
 
 <div class="section">
@@ -473,10 +471,6 @@
         });
     });
     
-    on('mouseover:rollmodal', () => {
-        console.log('moused over')
-    })
-
     on('change:checkskill', skill => {
         getAttrs([skill.newValue], values => {
             setAttrs({
@@ -564,7 +558,10 @@
             </div>
             <div>
                 <h3>Success(es)</h3>
-                <span class="number">{{result}}</span>
+                <span class="number">
+                    {{result}}
+                    <span class="details">{{results}} vs {{threshold}} with critical on {{crit}}</span>
+                </span>
             </div>
         </div>
         {{#passed}}

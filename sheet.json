@@ -1,8 +1,9 @@
 {
-    "html": "dishonored.html",
-    "css": "dishonored.css",
     "authors": "Pierre V.",
-    "roll20userid": "1081562",
+    "css": "dishonored.css",
+    "html": "dishonored.html",
+    "instructions": "Character Sheet for Dishonored: the Roleplaying Game",
     "preview": "dispreview.png",
-    "instructions": "Character Sheet for Dishonored: the Roleplaying Game"
+    "roll20userid": "1081562",
+    "tipeee": "https://en.tipeee.com/anubis-vlad-tepas/"
 }
