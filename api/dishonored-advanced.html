@@ -1,0 +1,577 @@
+<div class="header">
+    <img class="logo" src="https://gogs.vanhulst.one/vanhulst/Dishonored_character_sheet/raw/branch/master/images/dishonored-logo.png" alt="Dishonored: the Roleplaying Game">
+    <hr/>
+    <label class="header__field">
+        <input type="text" name="attr_character_name" />
+        <span class="field__header">Name</span>
+    </label>
+    <label class="header__field">
+        <input type="text" name="attr_age" />
+        <span class="field__header">Age</span>
+    </label>
+    <label class="header__field">
+        <input type="text" name="attr_truth1" />
+        <span class="field__header">First truth</span>
+    </label>
+    <label class="header__field">
+        <input type="text" name="attr_truth2" />
+        <span class="field__header">Second truth</span>
+    </label>
+    <label class="header__field">
+        <select name="attr_archetype">
+            <option value="assassin">Assassin</option>
+            <option value="commander">Commander</option>
+            <option value="courier">Courier</option>
+            <option value="duelist">Duelist</option>
+            <option value="entrepreneur">Entrepreneur</option>
+            <option value="explorer">Explorer</option>
+            <option value="guide">Guide</option>
+            <option value="hunter">Hunter</option>
+            <option value="inventor">Inventor</option>
+            <option value="scholar">Scholar</option>
+            <option value="scout">Scout</option>
+            <option value="sharpshooter">Sharpshooter</option>
+            <option value="miscreant">Miscreant</option>
+        </select>
+        <span class="field__header">Archetype</span>
+    </label>
+</div>
+
+<div class="roll">
+    <button type="action" name="act_rollmodal">
+        <img src="https://gogs.vanhulst.one/vanhulst/Dishonored_character_sheet/raw/branch/master/images/d20.png" alt="Make a roll">
+    </button>
+</div>
+
+<div class="section">
+    <div class="skills">
+        <h2>Skills</h2>
+        <label>
+            <span class="field__header">Fight</span>
+            <input type="number" name="attr_fight" min="1" max="8" value="4" />
+        </label>
+        <label>
+            <span class="field__header">Move</span>
+            <input type="number" name="attr_move" min="1" max="8" value="4" />
+        </label>
+        <label>
+            <span class="field__header">Study</span>
+            <input type="number" name="attr_study" min="1" max="8" value="4" />
+        </label>
+        <label>
+            <span class="field__header">Survive</span>
+            <input type="number" name="attr_survive" min="1" max="8" value="4" />
+        </label>
+        <label>
+            <span class="field__header">Talk</span>
+            <input type="number" name="attr_talk" min="1" max="8" value="4" />
+        </label>
+        <label>
+            <span class="field__header">Tinker</span>
+            <input type="number" name="attr_tinker" min="1" max="8" value="4" />
+        </label>
+    </div>
+    <div class="center">
+        <div>
+            <label>
+                <input class="central" name="attr_stress" type="number" min="0" max="8" value="0" />
+                / <span name="attr_stress_max"></span>
+                <h2>Stress</h2>    
+            </label>
+        </div>
+        <div>
+            <h2>Void Points</h2>
+            <input class="central" name="attr_void" type="number" value="0" />    
+        </div>
+    </div>
+    <div>
+        <h2>Styles</h2>
+        <label>
+            <input type="number" name="attr_boldly" min="1" max="8" value="4" />
+            <span class="field__header">Boldly</span>
+        </label>
+        <label>
+            <input type="number" name="attr_carefully" min="1" max="8" value="4" />
+            <span class="field__header">Carefully</span>
+        </label>
+        <label>
+            <input type="number" name="attr_cleverly" min="1" max="8" value="4" />
+            <span class="field__header">Cleverly</span>
+        </label>
+        <label>
+            <input type="number" name="attr_forcefully" min="1" max="8" value="4" />
+            <span class="field__header">Forcefully</span>
+        </label>
+        <label>
+            <input type="number" name="attr_quietly" min="1" max="8" value="4" />
+            <span class="field__header">Quietly</span>
+        </label>
+        <label>
+            <input type="number" name="attr_swiftly" min="1" max="8" value="4" />
+            <span class="field__header">Swiftly</span>
+        </label>
+    </div>
+</div>
+
+<div class="section">
+    <div>
+        <h2>Contacts</h2>
+        <fieldset class="repeating_contact">
+            <div class="rep--oneline">
+                <label class="header__field">
+                    <span class="field__header">Name</span>
+                    <input type="text" name="attr_name" placeholder="Name of the contact" />
+                </label>
+                <label class="header__field">
+                    <span class="field__header">Level</span>
+                    <select name="attr_level"> 
+                        <option value="great">Great</option>
+                        <option value="fair">Fair</option>
+                        <option value="neutral" selected>Neutral</option>
+                        <option value="poor">Poor</option>
+                        <option value="dire">Dire</option>
+                    </select>    
+                </label>    
+            </div>
+        </fieldset>    
+    </div>
+    <div>
+        <h2>Focuses</h2>
+        <fieldset class="repeating_focus"> 
+            <div class="rep--oneline">
+                <label class="header__field">
+                    <select name="attr_focusname"> 
+                        <option value="acrobatics">Acrobatics</option>
+                        <option value="archery">Archery</option>
+                        <option value="boats">Boats</option>
+                        <option value="brawling">Brawling</option>
+                        <option value="carriages">Carriages</option>
+                        <option value="concentrate">Concentrate</option>
+                        <option value="counsel">Counsel</option>
+                        <option value="deceive">Deceive</option>
+                        <option value="engineering">Engineering</option>
+                        <option value="etiquette">Etiquette</option>
+                        <option value="explosives">Explosives</option>
+                        <option value="fencing">Fencing</option>
+                        <option value="firearms">Firearms</option>
+                        <option value="freerunning">Freerunning</option>
+                        <option value="history">History</option>
+                        <option value="innuendo">Innuendo</option>
+                        <option value="intimidate">Intimidate</option>
+                        <option value="locks">Locks</option>
+                        <option value="medicine">Medicine</option>
+                        <option value="naturalphilosophy">Natural Philosophy</option>
+                        <option value="negotiate">Negotiate</option>
+                        <option value="persuade">Persuade</option>
+                        <option value="resilience">Resilience</option>
+                        <option value="resolve">Resolve</option>
+                        <option value="ride">Ride</option>
+                        <option value="ships">Ships</option>
+                        <option value="society">Society</option>
+                        <option value="stealth">Stealth</option>
+                        <option value="streetwise">Streetwise</option>
+                        <option value="surgery">Surgery</option>
+                        <option value="swimming">Swimming</option>
+                        <option value="theology">Theology</option>
+                        <option value="tracking">Tracking</option>
+                        <option value="voidlore">Void Lore</option>
+                        <option value="wilderness">Wilderness</option>
+                    </select>
+                </label>
+                <label class="header__field">
+                    <input type="number" name="attr_focuslevel" min="1" max="5" value="1" /> 
+                </label>
+            </div>
+        </fieldset>    
+    </div>
+</div>
+
+<div class="section">
+    <div>
+        <h2>Talents</h2>
+        <fieldset class="repeating_talent"> 
+            <div class="rep--oneline">
+                <label class="header__field">
+                    <select name="attr_talentname"> 
+                        <optgroup label="Assassin's talents">
+                            <option value="bespokebloodletting">Bespoke bloodletting</option>
+                            <option value="thegreatequalizer">The great equalizer</option>
+                            <option value="inhumanedetermination">Inhumane determination</option>
+                            <option value="outsidersgrin">Outsider’s grin</option>    
+                        </optgroup>
+                        <optgroup label="Commander's talents">
+                            <option value="whiskeyandcigars">Whiskey and Cigars</option>
+                            <option value="getbacktoit">Get Back To It!</option>
+                            <option value="pullrank">Pull rank</option>
+                            <option value="rally">Rally</option>    
+                        </optgroup>
+                        <optgroup label="Courier's talents">
+                            <option value="cityofwhispers">City of whispers</option>
+                            <option value="friendseverywhere">Friends everywhere</option>
+                            <option value="smugglerssecrets">Smuggler’s secrets</option>
+                            <option value="supplyanddemand">Supply and demand</option>    
+                        </optgroup>
+                        <optgroup label="Duelist's talents">
+                            <option value="bravurablade">Bravura blade</option>
+                            <option value="flashingsteel">Flashing steel</option>
+                            <option value="footwork">Footwork</option>
+                            <option value="measuredstrike">Measured strike</option>    
+                        </optgroup>
+                        <optgroup label="Entrepreneur's talents">
+                            <option value="blackmarketeer">Black marketeer</option>
+                            <option value="investors">Investors</option>
+                            <option value="salespitch">Sales pitch</option>
+                            <option value="selfmade">Self-made</option>    
+                        </optgroup>
+                        <optgroup label="Explorer's talents">
+                            <option value="expertcartographer">Expert cartographer</option>
+                            <option value="firstglance">First glance</option>
+                            <option value="hardytraveler">Hardy traveler</option>
+                            <option value="surveyor">Surveyor</option>    
+                        </optgroup>
+                        <optgroup label="Guide's talents">
+                            <option value="companion">Companion</option>
+                            <option value="fieldcraft">Fieldcraft</option>
+                            <option value="forager">Forager</option>
+                            <option value="sageadvice">Sage advice</option>    
+                        </optgroup>
+                        <optgroup label="Hunter's talents">
+                            <option value="ambushexpertise">Ambush expertise</option>
+                            <option value="familiartactics">Familiar tactics</option>
+                            <option value="predatorspatience">Predator’s patience</option>
+                            <option value="trapper">Trapper</option>    
+                        </optgroup>
+                        <optgroup label="Inventor's talents">
+                            <option value="controlleddetonation">Controlled detonation</option>
+                            <option value="personalnotes">Personal notes</option>
+                            <option value="pushingtheboundariesofprogress">Pushing the boundaries of progress</option>
+                            <option value="salvageforparts">Salvage for parts</option>    
+                        </optgroup>
+                        <optgroup label="Scholar's talents">
+                            <option value="deepexpertise">Deep expertise</option>
+                            <option value="didtheresearch">Did the research</option>
+                            <option value="eruditeexposition">Erudite exposition</option>
+                            <option value="librarian">Librarian</option>    
+                        </optgroup>
+                        <optgroup label="Scout's talents">
+                            <option value="constantlyalert">Constantly alert</option>
+                            <option value="fightingfit">Fighting fit</option>
+                            <option value="hitandrun">Hit and run</option>
+                            <option value="likeashadow">Like a shadow</option>    
+                        </optgroup>
+                        <optgroup label="Sharpshooter's talents">
+                            <option value="crackshot">Crack shot</option>
+                            <option value="exploitsweakness">Exploit weakness</option>
+                            <option value="prizedsweapon">Prized weapon</option>
+                            <option value="saboteur">Saboteur</option>    
+                        </optgroup>
+                        <optgroup label="Miscreant's talents">
+                            <option value="dauntless">Dauntless</option>
+                            <option value="fightdirty">Fight dirty</option>
+                            <option value="putyourbackintoit">Put your back into it!</option>
+                            <option value="shouldercharge">Shoulder charge</option>    
+                        </optgroup>
+                  </select>
+                </label>
+            </div>
+        </fieldset>    
+    </div>
+    <div>
+        <h2>Powers</h2>
+        <fieldset class="repeating_power"> 
+            <label class="header__field">
+                <select name="attr_powername"> 
+                    <optgroup label="Powers">
+                        <option value="bendtime">Bend Time</option>
+                        <option value="blink">Blink</option>
+                        <option value="bloodbriar">Blood briar</option>
+                        <option value="darkvision">Dark vision</option>
+                        <option value="devouringswarm">Devouring swarm</option>
+                        <option value="farreach">Far reach</option>
+                        <option value="fogcaller">Fog caller</option>
+                        <option value="mesmerize">Mesmerize</option>
+                        <option value="possession">Possession</option>
+                        <option value="thorns">Thorns</option>
+                        <option value="eyewithin">Eye within</option>    
+                    </optgroup>
+                    <optgroup label="Enhancements">
+                        <option value="agility">Agility</option>
+                        <option value="beastwhispers">Beast whispers</option>
+                        <option value="darkinspiration">Dark inspiration</option>
+                        <option value="darkscrimshaw">Dark scrimshaw</option>
+                        <option value="escape">Escape</option>
+                        <option value="glimpsehollows">Glimpse hollows</option>
+                        <option value="shadowkill">Shadow kill</option>
+                        <option value="strength">Strength</option>
+                        <option value="vitality">Vitality</option>
+                    </optgroup>
+                </select>                
+            </label>
+        </fieldset>   
+    </div>
+</div>
+
+<div class="section">
+    <h2>Belongings</h2>
+    <fieldset class="repeating_belonging"> 
+        <div class="rep--oneline">
+            <input class="item__name" type="text" name="attr_name" placeholder="Name of the item" style="flex:1.5" />
+            <input class="item__truth" type="text" name="attr_truth" placeholder="Truth(s), power(s)" /> 
+            <select class="item__type" name="attr_type">
+                <option value="regular"> Regular item</option>
+                <option value="bonecharm"> Bonecharm</option>
+                <option value="artefact"> Artefact</option>
+            </select>
+        </div>
+    </fieldset>   
+</div>
+
+<div class="section">
+    <h2>Additional truths</h2>
+    <fieldset class="repeating_extratruths"> 
+        <input type="text" name="attr_name" placeholder="Additional truth" /> 
+    </fieldset>   
+
+</div>
+
+<div class="section">
+    <h2>Notes</h2>
+    <label>
+        <textarea name="attr_notes"></textarea>
+    </label>
+</div>
+
+<div class="footer">
+    @2020 Bethesda Softworks, a ZeniMax Media Company. All Rights Reserved. Dishonored: the Roleplaying Game has been developed by Modiphius Entertainment. Character sheet implemented for Roll20 by Pierre V. Credits to <a href="https://www.onlygfx.com/">OnlyGFX.com</a> for the ink brush under each field of the sheet. Credits to Vandymagination for the D20 icon.
+</div>
+
+<!-- Roll Modal -->
+<input class="rollModal__trigger" type="hidden" name="attr_rollmodal">
+<div class="rollModal">
+    <div class="rollModal__container">
+        <div class="rollModal__header">
+            <h2>Make a skill check</h2>
+            <button type="action" name="act_rollmodal">
+                <span>&#x2716;</span>
+            </button>
+        </div>
+        <label>
+            <h3>Skill</h3>
+            <select name="attr_checkskill">
+                <option value="fight">Fight</option>
+                <option value="move">Move</option>
+                <option value="study">Study</option>
+                <option value="survive">Survive</option>
+                <option value="talk">Talk</option>
+                <option value="tinker">Tinker</option>
+            </select>
+            <input type="hidden" name="attr_checkskillvalue">
+        </label>
+        <label>
+            <h3>Style</h3>
+            <select name="attr_checkstyle">
+                <option value="boldly">Boldly</option>
+                <option value="carefully">Carefully</option>
+                <option value="cleverly">Cleverly</option>
+                <option value="forcefully">Forcefully</option>
+                <option value="quietly">Quietly</option>
+                <option value="swiftly">Swiftly</option>
+            </select>
+            <input type="hidden" name="attr_checkstylevalue">
+        </label>
+        <label>
+            <h3>Focus</h3>
+            <select name="attr_checkfocus">
+                <option value="none">None</option>
+                <option value="acrobatics">Acrobatics</option>
+                <option value="archery">Archery</option>
+                <option value="boats">Boats</option>
+                <option value="brawling">Brawling</option>
+                <option value="carriages">Carriages</option>
+                <option value="concentrate">Concentrate</option>
+                <option value="counsel">Counsel</option>
+                <option value="deceive">Deceive</option>
+                <option value="engineering">Engineering</option>
+                <option value="etiquette">Etiquette</option>
+                <option value="explosives">Explosives</option>
+                <option value="fencing">Fencing</option>
+                <option value="firearms">Firearms</option>
+                <option value="freerunning">Freerunning</option>
+                <option value="history">History</option>
+                <option value="innuendo">Innuendo</option>
+                <option value="intimidate">Intimidate</option>
+                <option value="locks">Locks</option>
+                <option value="medicine">Medicine</option>
+                <option value="naturalphilosophy">Natural Philosophy</option>
+                <option value="negotiate">Negotiate</option>
+                <option value="persuade">Persuade</option>
+                <option value="resilience">Resilience</option>
+                <option value="resolve">Resolve</option>
+                <option value="ride">Ride</option>
+                <option value="ships">Ships</option>
+                <option value="society">Society</option>
+                <option value="stealth">Stealth</option>
+                <option value="streetwise">Streetwise</option>
+                <option value="surgery">Surgery</option>
+                <option value="swimming">Swimming</option>
+                <option value="theology">Theology</option>
+                <option value="tracking">Tracking</option>
+                <option value="voidlore">Void Lore</option>
+                <option value="wilderness">Wilderness</option>
+            </select>
+            <input type="hidden" name="attr_checkfocusvalue" value="1">
+        </label>
+        <div class="rollModal__container__misc">
+            <label>
+                <h3>Dice</h3>
+                <input type="number" min="1" max="5" value="2" name="attr_checkdice">
+            </label>
+            <label>
+                <h3>Difficulty</h3>
+                <input type="number" min="1" max="5" value="1" name="attr_checkdifficulty">
+            </label>
+        </div>
+        <input type="hidden" name="attr_totalvalue"/>
+        <button type="roll" value="!2d20Parse [[@{checkdice}d20sacs<@{checkfocusvalue}cf20<@{totalvalue}]] {{skill=@{checkskill}}} {{style=@{checkstyle}}} {{focus=@{checkfocus}}} {{dice=@{checkdice}}} {{difficulty=@{checkdifficulty}}}">Let Fate decides!</button>
+    </div>
+</div>
+<!-- End Roll Modal -->
+
+<!-- Sheet Worker -->
+<script type="text/worker">
+    console.log('Dishonored character sheet initializing.');
+
+    /** Stress maximum */
+    on("change:survive", survive => {
+        getAttrs(['stress'], values => {
+            const changes = {
+                stress_max: survive.newValue
+            };
+            if (survive.newValue < values.stress) changes.stress = survive.newValue;
+            setAttrs(changes);
+        });
+    });
+
+    on("change:stress", stress => {
+        getAttrs(['stress_max'], values => {
+            if (values.stress_max < stress.newValue) {
+                setAttrs({
+                    stress: values.stress_max
+                });
+            }
+        });
+    });
+
+    /** End Stress maximum */
+
+    /** Roll */
+    on('clicked:rollmodal', () => {
+        getAttrs(['rollmodal'], values => {
+            setAttrs({
+                rollmodal: !values.rollmodal
+            });
+        });
+    });
+    
+    on('mouseover:rollmodal', () => {
+        console.log('moused over')
+    })
+
+    on('change:checkskill', skill => {
+        getAttrs([skill.newValue], values => {
+            setAttrs({
+                checkskillvalue: values[skill.newValue]
+            });
+        });
+    });
+
+    on('change:checkstyle', style => {
+        getAttrs([style.newValue], values => {
+            setAttrs({
+                checkstylevalue: values[style.newValue]
+            });
+        });
+    });
+
+    on('change:checkfocus', focus => {
+        getSectionIDs('repeating_focus', selectedFocus => {
+            const fNames = selectedFocus.map(s => `repeating_focus_${s}_focusname`);
+            console.log('fnames', fNames);
+            getAttrs(fNames, names => {
+                const nIndex = Object.values(names).indexOf(focus.newValue);
+                console.log('nindex', nIndex, names, focus.newValue);
+                if(nIndex === -1) {
+                    setAttrs({
+                        checkfocusvalue: 1
+                    });        
+                } else {
+                    const key = Object.keys(names)[nIndex].split('_');
+                    key.pop();
+                    key.push('focuslevel');
+                    const keyLevel = key.join('_');
+                    getAttrs([key.join('_')], level => {
+                        setAttrs({
+                            checkfocusvalue: level[keyLevel]
+                        });
+                    })
+                }
+            })
+        })
+    });
+
+    on('change:checkstylevalue change:checkskillvalue', () => {
+        getAttrs(['checkskillvalue','checkstylevalue'], values => {
+            setAttrs({
+                totalvalue: (+values.checkskillvalue) + (+values.checkstylevalue)
+            });
+        });
+    });
+
+    /** End Roll */
+</script>
+<!-- End Sheet Worker -->
+
+<!-- Roll Templates -->
+<rolltemplate class="sheet-rolltemplate-roll">
+    <div class="sheet-template-container">
+        <div class="sheet-template__header">
+            <h2>Roll</h2>
+        </div>
+        <div class="sheet-template__body">
+            <div>
+                <h3>Skill</h3>
+                <span class="text">{{skill}}</span>
+            </div>
+            <div>
+                <h3>Style</h3>
+                <span class="text">{{style}}</span>
+            </div>
+            {{#focus}}
+            <div>
+                <h3>Focus</h3>
+                <span class="text">{{focus}}</span>
+            </div>
+            {{/focus}}
+            <div class="numeric">
+                <div>
+                    <h3>Dice</h3>
+                    <span class="number">{{dice}}</span>
+                </div>
+                <div>
+                    <h3>Difficulty</h3>
+                    <span class="number">{{difficulty}}</span>
+                </div>    
+            </div>
+            <div>
+                <h3>Success(es)</h3>
+                <span class="number">{{result}}</span>
+            </div>
+        </div>
+        {{#passed}}
+        <div class="sheet-template__footer {{class}}">
+            <span>The action {{passed}}!</span>
+        </div>
+        {{/passed}}
+    </div>
+</rolltemplate>
+<!-- End Roll Templates -->
